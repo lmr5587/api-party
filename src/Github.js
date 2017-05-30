@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import{ Route } from 'react-router-dom'
 import './Github.css'
-import Github from './GithubUser'
+import GithubUser from './GithubUser'
 
 class Github extends Component{
     state={
@@ -18,7 +18,7 @@ class Github extends Component{
     render() {
         return (
             <div className='github'>
-                <img className="github-logo" scr="http://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png" alt="github Logo"/>
+                <img className="github-logo" src="http://www.aha.io/assets/github.7433692cabbfa132f34adb034e7909fa.png" alt="github"/>
                 <form onSubmit={this.handleSubmit}>
                     <div>
                     <input type="text" 

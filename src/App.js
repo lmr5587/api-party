@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Switch, Route, NavLink} from 'react-router-dom'
+import { Switch, Route, NavLink } from 'react-router-dom'
 import Github from './Github'
 import Nasa from './Nasa'
-import './app.css';
+import Homework from './Homework'
+import './App.css';
 
 class App extends Component {
   render() {
@@ -13,18 +14,22 @@ class App extends Component {
             <h3> Ain't no party like an</h3>
             <h1>API party</h1>
           </div>
-          <ul className="nav-link">
+          <ul className="nav-links">
             <li>
               <NavLink to ={'/github'}>Github API</NavLink>
             </li>
             <li>
               <NavLink to={'/nasa'}>NASA API</NavLink>
             </li>
+            <li>
+              <NavLink to={'/homework'}>Homework</NavLink>
+            </li>
           </ul>
           </div>
           <Switch>
-            <Route path='/github' Component={Github} />
-            <Route path='/nasa' Component={Nasa} />
+            <Route path='/github' component={Github} />
+            <Route path='/nasa' component={Nasa} />
+            <Route path='/homework' component={Homework} />
             <Route render={() => <p>To get started, click one of the links above</p>} />
           </Switch>
         </div>
