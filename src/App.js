@@ -10,7 +10,7 @@ class App extends Component {
           <div className="App-headings">
             <h3> Ain't no party like an</h3>
             <h1>API party</h1>
-
+          </div>
         </div>
         
       </div>
