@@ -7,6 +7,14 @@ class Poke extends Component {
     state={
         pokemon:''
     }
+     handleChange = (ev) => {
+        const pokemon = ev.currentTarget.value
+        this.setState({ pokemon })
+    }
+    handleSubmit = (ev) => {
+        ev.preventDefault()
+        this.props.history.push(`/poke/${this.state.pokemon}`)
+    }
     render() {
         return (
         <div className='poke'>
@@ -14,19 +22,19 @@ class Poke extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <div>
                     <input type="text" 
-                    //value={this.state.username} 
-                    //onChange={this.handleChange}
+                    value={this.state.pokemon} 
+                    onChange={this.handleChange}
                     />
                     </div>
                     <div>
                         <button type="submit">Look up Pokemon</button>
                     </div>
                 </form>
-      {/*<Route exact path='/github' render={() => (
-          <h3>Please enter a username to search on Github</h3> 
+      <Route exact path='/poke' render={() => (
+          <h3>Please enter a pokemon name to search</h3> 
         )} />
-        <Route path='/github/:username' component={GithubUser} />
-      */}</div>
+        <Route path='/poke/:pokemon' component={Pokemon} />
+      </div>
     )
   }
 }
